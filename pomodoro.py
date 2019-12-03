@@ -24,7 +24,7 @@ class AwesomeStatusBarApp(rumps.App):
 
     def start_new_sess(self):
         self.status = "inter"
-        test = rumps.Window(message="", title='Start Pomodoro Session', default_text='abc', ok="Start", cancel="Procrastinate", dimensions=(320,80))
+        test = rumps.Window(message="", title='Start Pomodoro Session', default_text='use mouse clicks to copy paste', ok="Start", cancel="Procrastinate", dimensions=(320,80))
         test.icon = "/Users/clemens/Documents/Misc/pomodoro/invisible.png"
         response = test.run()
         if response.clicked == 1:
@@ -46,7 +46,7 @@ class AwesomeStatusBarApp(rumps.App):
         end_time = datetime.now()
         self.status = "inter"
         self.title = "--:--"
-        test = rumps.Window(message="Goal: "+self.init_goal, title='Session Done!', default_text='abc', ok="Start Break", cancel="Finish", dimensions=(320,80))
+        test = rumps.Window(message="Goal: "+self.init_goal, title='Session Done!', default_text='use mouse clicks to copy paste', ok="Start Break", cancel="Finish", dimensions=(320,80))
         test.icon = "/Users/clemens/Documents/Misc/pomodoro/invisible.png"
         response = test.run()
         # log the session
