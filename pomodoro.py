@@ -65,8 +65,8 @@ class AwesomeStatusBarApp(rumps.App):
 
     def get_remain(self, time_l):
         time_passed = (datetime.now() - self.start_cur).seconds
-        sec_str = str(59 - time_passed%60)
-        min_str = str((time_l) - max(math.ceil( time_passed/60),1))
+        sec_str = (  str(60 - time_passed%60) if time_passed%60 != 0 else "00" )
+        min_str = str(time_l - math.ceil(time_passed/60))
         return (min_str if len(min_str) == 2 else '0' + min_str ) + ":" + (sec_str if len(sec_str) == 2 else '0' + sec_str )
     
 
